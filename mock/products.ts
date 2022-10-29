@@ -18,6 +18,7 @@ export const PRODUCTS = [
       "test",
       "test",
     ],
+    discount: "50",
     garages: [
       {
         name: "Garage",
@@ -66,13 +67,13 @@ export const PRODUCTS = [
         to: "11.59 PM",
         services: ["wifi", "lounge", "washroom", "praying"],
         image: "tette",
-        discount: "50",
       },
     ],
   },
   {
     name: "one",
     image: "test",
+    discount: "50",
     services: [
       "test",
       "test",
@@ -268,6 +269,7 @@ export const PRODUCTSTWO = [
   {
     name: "Oil",
     image: "test",
+    discount: "50",
     services: [
       "test",
       "test",

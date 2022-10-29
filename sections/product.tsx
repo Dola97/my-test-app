@@ -15,6 +15,7 @@ export const ProductsSection = () => {
             <ProductCard
               onClick={() => _handleSetProduct(item.garages)}
               name={item.name}
+              discount={item.discount}
               services={item.services}
             />
           </Fragment>

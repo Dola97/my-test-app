@@ -1,12 +1,12 @@
 import {
   Box,
   Divider,
-  Image,
   Text,
   Rating,
   Group,
   Badge,
   ActionIcon,
+  BackgroundImage,
 } from "@mantine/core";
 import React from "react";
 import { IconX } from "@tabler/icons";
@@ -41,13 +41,25 @@ export const GarageCard = ({
             alignItems: "flex-start",
           }}
         >
-          <Image
-            width={150}
-            height={150}
+          <BackgroundImage
+            sx={{ width: 150, height: 150 }}
             radius="lg"
-            alt="car"
             src="https://source.unsplash.com/random"
-          />
+          >
+            <Badge
+              sx={{
+                borderTopRightRadius: 10,
+                borderBottomRightRadius: 10,
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0,
+                boxShadow: "1px 2px 9px #000",
+                backgroundColor: "white",
+              }}
+              variant="filled"
+            >
+              <Text color="orange">kdsds</Text>
+            </Badge>
+          </BackgroundImage>
           <Box sx={{ paddingLeft: 10 }}>
             <Text>{name}</Text>
             <Text>{location}</Text>

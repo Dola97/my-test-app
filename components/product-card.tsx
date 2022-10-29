@@ -4,9 +4,9 @@ import {
   Badge,
   Box,
   Divider,
-  Image,
   Text,
   SimpleGrid,
+  BackgroundImage,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import {
@@ -14,7 +14,7 @@ import {
   IconCalendarTime,
   IconArrowMoveRight,
 } from "@tabler/icons";
-export const ProductCard = ({ services, name, onClick }: any) => {
+export const ProductCard = ({ services, name, onClick, discount }: any) => {
   const matches = useMediaQuery("(min-width: 576px)");
 
   const Arrow = (
@@ -44,13 +44,27 @@ export const ProductCard = ({ services, name, onClick }: any) => {
             alignItems: "flex-start",
           }}
         >
-          <Image
-            width={150}
-            height={150}
+          <BackgroundImage
+            sx={{ width: 150, height: 150 }}
             radius="lg"
-            alt="car"
             src="https://source.unsplash.com/random"
-          />
+          >
+            {discount && (
+              <Badge
+                sx={{
+                  borderTopRightRadius: 10,
+                  borderBottomRightRadius: 10,
+                  borderTopLeftRadius: 0,
+                  borderBottomLeftRadius: 0,
+                  boxShadow: "1px 2px 9px #000",
+                  backgroundColor: "white",
+                }}
+                variant="filled"
+              >
+                <Text color="orange">{`${discount} % discount`}</Text>
+              </Badge>
+            )}
+          </BackgroundImage>
           <Box sx={{ paddingLeft: 10 }}>
             <Text>{name}</Text>
             <SimpleGrid spacing="xl" cols={2}>
